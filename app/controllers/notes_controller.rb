@@ -2,13 +2,18 @@ class NotesController < ApplicationController
 	before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def new
+  	@note = Note.new
   end
 
   def create
   	@note = Note.new(note_params)
-  	@note.save
 
+  	if @note.save
   	redirect_to @note
+		else 
+			render :new
+		end
+
   end
 
   def index
