@@ -7,6 +7,7 @@ class NotesController < ApplicationController
   def create
   	@note = Note.new(note_params)
   	@note.save
+  	redirect_to note_path(@note.id)
   end
 
   def index
@@ -20,9 +21,15 @@ class NotesController < ApplicationController
   end
 
   def update
+  	@note.title = params[:title]
+  	@note.content = params[:content]
+  	@note.save
+  	redirect_to note_path(@note.id)
   end
 
   def destroy
+  	@note.destroy
+  	redirect_to notes_path
   end
 
   private 
