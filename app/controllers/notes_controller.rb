@@ -7,7 +7,8 @@ class NotesController < ApplicationController
   def create
   	@note = Note.new(note_params)
   	@note.save
-  	redirect_to note_path(@note.id)
+
+  	redirect_to @note
   end
 
   def index
