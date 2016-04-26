@@ -19,3 +19,6 @@ gem 'turbolinks', '2.5.3'
 gem 'pry-rails', '0.3.4'
 # hirbの出力を日本語に対応させるgem
 gem 'hirb-unicode'
+# エラー出力を綺麗にする
+gem "better_errors"
+gem "binding_of_caller"
